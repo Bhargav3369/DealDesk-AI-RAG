@@ -1,0 +1,18 @@
+:root {
+  --background-dark: #0f111a;
+  --background-glass: rgba(30, 31, 41, 0.6);
+  --background-glass-hover: rgba(45, 47, 61, 0.8);
+  
+  --text-primary: #f0f0f5;
+  --text-secondary: #a0a2b1;
+  --text-accent: #00e5ff;
+  
+  --border-glass: rgba(255, 255, 255, 0.1);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --radius-xl: 16px;
+  --radius-md: 8px;
+  
+  --primary-gradient: linear-gradient(135deg, #00e5ff 0%, #1200ff 100%);
+  --user-msg-bg: linear-gradient(135deg, #2b32b2 0%, #1488cc 100%);
+  --ai-msg-bg: rgba(30, 31, 41, 0.8);
+}

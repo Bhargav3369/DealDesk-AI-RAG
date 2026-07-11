@@ -1,0 +1,99 @@
+project: DealDesk AI
+description: Public developer-platform sources for a RAG sales/support copilot.
+notes:
+  - Use public pages only.
+  - Respect robots.txt and site terms.
+  - Start with 80-150 pages total, then scale after the RAG pipeline works.
+  - Store source_url, vendor, category, and fetched_at with every document.
+
+sources:
+  - vendor: Supabase
+    domain: supabase.com
+    seed_urls:
+      - https://supabase.com/docs
+      - https://supabase.com/pricing
+      - https://supabase.com/docs/guides/auth
+      - https://supabase.com/docs/guides/database
+      - https://supabase.com/docs/guides/storage
+      - https://supabase.com/docs/guides/realtime
+      - https://supabase.com/docs/guides/functions
+      - https://supabase.com/docs/guides/ai
+    allow_prefixes:
+      - https://supabase.com/docs
+      - https://supabase.com/pricing
+    categories:
+      - product_docs
+      - pricing
+      - auth
+      - database
+      - storage
+      - realtime
+      - ai_vectors
+
+  - vendor: Firebase
+    domain: firebase.google.com
+    seed_urls:
+      - https://firebase.google.com/docs
+      - https://firebase.google.com/pricing
+      - https://firebase.google.com/docs/auth
+      - https://firebase.google.com/docs/firestore
+      - https://firebase.google.com/docs/storage
+      - https://firebase.google.com/docs/hosting
+      - https://firebase.google.com/docs/functions
+      - https://firebase.google.com/docs/database
+    allow_prefixes:
+      - https://firebase.google.com/docs
+      - https://firebase.google.com/pricing
+    categories:
+      - product_docs
+      - pricing
+      - auth
+      - database
+      - storage
+      - hosting
+      - serverless
+
+  - vendor: Vercel
+    domain: vercel.com
+    seed_urls:
+      - https://vercel.com/docs
+      - https://vercel.com/pricing
+      - https://vercel.com/docs/deployments
+      - https://vercel.com/docs/functions
+      - https://vercel.com/docs/storage
+      - https://vercel.com/docs/security
+      - https://vercel.com/docs/frameworks
+      - https://vercel.com/docs/analytics
+    allow_prefixes:
+      - https://vercel.com/docs
+      - https://vercel.com/pricing
+    categories:
+      - product_docs
+      - pricing
+      - deployment
+      - functions
+      - storage
+      - security
+      - analytics
+
+  - vendor: Render
+    domain: render.com
+    seed_urls:
+      - https://render.com/docs
+      - https://render.com/pricing
+      - https://render.com/docs/web-services
+      - https://render.com/docs/postgresql-creating-connecting
+      - https://render.com/docs/deploy-node-express-app
+      - https://render.com/docs/deploy-django
+      - https://render.com/docs/blueprint-spec
+      - https://render.com/docs/free
+    allow_prefixes:
+      - https://render.com/docs
+      - https://render.com/pricing
+    categories:
+      - product_docs
+      - pricing
+      - hosting
+      - databases
+      - deployment
+      - free_tier

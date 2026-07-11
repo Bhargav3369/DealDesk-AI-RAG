@@ -1,0 +1,28 @@
+@import './styles/variables.css';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: var(--background-dark);
+  color: var(--text-primary);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  /* subtle dark gradient background */
+  background: radial-gradient(circle at 15% 50%, rgba(20, 136, 204, 0.1), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(0, 229, 255, 0.1), transparent 25%),
+    var(--background-dark);
+}
+
+#root {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+}

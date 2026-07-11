@@ -1,0 +1,104 @@
+# DealDesk AI RAG Project - Cursor AI Rules
+
+## Project Overview
+DealDesk AI: A RAG-Powered Sales Intelligence Copilot for SaaS Teams. Includes a data ingestion/RAG pipeline, and will include a full-stack application with React + Vite frontend and FastAPI + Python backend.
+
+## Tech Stack
+- **Frontend**: React 18, Vite, React Router v6, Axios
+- **Backend**: FastAPI (Python 3.9+)
+- **Database**: Local File Storage for documents, Vector JSON index
+- **AI/RAG**: Gemini API (Flash Lite), Document Chunking, BM25 + Vector Retrieval
+- **Styling**: CSS3 with CSS variables (dark mode)
+
+## Frontend Coding Standards
+
+### React Components
+- Use functional components with hooks (no class components)
+- Use arrow function syntax for components
+- Destructure props in function parameters
+- Use named exports for components
+
+### State Management
+- Use `useState` for local component state
+- Use `useEffect` for side effects and API calls
+- Implement loading and error states for async operations
+
+### API Calls
+- All API calls in `services/api.js` (or similar)
+- Use async/await (not .then/.catch)
+- Always implement error handling with try-catch
+- Show loading states during API calls
+
+### Styling
+- Use CSS modules or scoped CSS classes
+- Follow BEM naming convention: `block__element--modifier`
+- Use CSS variables defined in `variables.css` for colors, spacing
+- Ensure responsive design with mobile-first approach
+- Dark mode is the default theme
+
+### File Naming
+- Components: PascalCase (e.g., `ChatInterface.jsx`, `UploadDocument.jsx`)
+- Utilities/Services: camelCase (e.g., `api.js`, `helpers.js`)
+- Styles: kebab-case (e.g., `chat.css`, `variables.css`)
+
+## Backend Coding Standards
+
+### Python Style
+- Follow PEP 8 style guide
+- Use type hints for function parameters and return types
+- Use meaningful variable and function names
+- Maximum line length: 100 characters
+
+### FastAPI Routers
+- One router per resource (e.g., queries, documents, feedback)
+- Use dependency injection where appropriate
+- Implement proper HTTP status codes
+- Add detailed docstrings for endpoints
+
+### Error Handling
+- Use FastAPI HTTPException for API errors
+- Return appropriate status codes (200, 201, 400, 404, 500)
+- Include descriptive error messages
+- Log errors for debugging
+
+### Environment Variables
+- Never hardcode credentials or secrets
+- Use environment variables for API keys (e.g., `GEMINI_API_KEY`)
+- Load using `os.getenv()` or `python-dotenv`
+
+## API Design
+- RESTful endpoint naming
+- Use proper HTTP methods: GET, POST, PUT, DELETE
+- Return consistent JSON response format
+
+## Security Best Practices
+- Enable CORS only for your frontend domain in production
+- Validate all user inputs with Pydantic schemas
+- Sanitize data
+
+## Git Commit Messages
+- Use conventional commits: `type(scope): description`
+- Types: feat, fix, docs, style, refactor, test, chore
+- Examples:
+  - `feat(frontend): add document upload component`
+  - `fix(rag): resolve empty chunking bug`
+  - `docs: update README with API instructions`
+
+## Testing Guidelines
+- Test API endpoints with FastAPI TestClient
+- Test React components with React Testing Library
+- Test RAG pipeline ingestion, chunking, indexing, and querying
+- Test responsive design at different breakpoints
+
+## Performance Optimization
+- Optimize RAG retrieval speeds
+- Keep Gemini API quotas and rate limits in mind
+- Lazy load images and heavy components
+- Minimize bundle size
+
+## Notes for AI Assistant
+- Prioritize dark mode design with modern aesthetics for any upcoming UIs
+- Implement glassmorphism and gradient effects
+- Ensure responsive design works on all devices
+- Follow the project Task List and Logbook entries closely
+- Ask for clarification if requirements are unclear
