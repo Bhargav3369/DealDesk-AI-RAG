@@ -41,7 +41,7 @@ The starter set uses public docs and pricing pages from:
 - Vercel: docs, pricing, deployments, functions, storage, security, frameworks, analytics.
 - Render: docs, pricing, web services, PostgreSQL, deployment guides, blueprints, free tier.
 
-These sources support resume-worthy workflows:
+These datasets power complex, enterprise-grade RAG workflows:
 
 - Feature comparison across vendors.
 - Pricing and free-tier Q&A.
