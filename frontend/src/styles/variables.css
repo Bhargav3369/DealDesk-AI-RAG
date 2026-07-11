@@ -1,18 +1,30 @@
 :root {
-  --background-dark: #0f111a;
-  --background-glass: rgba(30, 31, 41, 0.6);
-  --background-glass-hover: rgba(45, 47, 61, 0.8);
-  
-  --text-primary: #f0f0f5;
-  --text-secondary: #a0a2b1;
+  --bg-dark: #0b0d14;
+  --bg-sidebar: #11141f;
+  --bg-glass: rgba(255, 255, 255, 0.04);
+  --bg-glass-hover: rgba(255, 255, 255, 0.08);
+  --bg-msg-user: linear-gradient(135deg, #1a56db 0%, #00b4d8 100%);
+  --bg-msg-ai: rgba(255, 255, 255, 0.05);
+
+  --text-primary: #e8eaf6;
+  --text-secondary: #8b8fa8;
   --text-accent: #00e5ff;
-  
-  --border-glass: rgba(255, 255, 255, 0.1);
-  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  --radius-xl: 16px;
-  --radius-md: 8px;
-  
-  --primary-gradient: linear-gradient(135deg, #00e5ff 0%, #1200ff 100%);
-  --user-msg-bg: linear-gradient(135deg, #2b32b2 0%, #1488cc 100%);
-  --ai-msg-bg: rgba(30, 31, 41, 0.8);
+  --text-accent-2: #7c5cfc;
+
+  --border: rgba(255, 255, 255, 0.08);
+  --border-accent: rgba(0, 229, 255, 0.25);
+
+  --shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --gradient-brand: linear-gradient(135deg, #00e5ff 0%, #7c5cfc 100%);
+  --gradient-btn: linear-gradient(135deg, #1a56db 0%, #00b4d8 100%);
+
+  /* Dropdown custom palette */
+  --select-bg: #1a1d2e;
+  --select-border: rgba(124, 92, 252, 0.4);
+  --select-text: #c8cadb;
+  --select-focus: rgba(0, 229, 255, 0.5);
 }

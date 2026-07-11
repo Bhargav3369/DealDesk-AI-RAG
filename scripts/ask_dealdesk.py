@@ -52,7 +52,7 @@ def main():
         index = json.load(src)
 
     if args.retriever == "hybrid":
-        results = search_hybrid(index, args.vector_index, args.question, top_k=args.top_k, filters=filters)
+        results = search_hybrid(index, args.vector_index, args.question, top_k=args.top_k, filters=filters, mode=args.mode)
     else:
         results = search(index, args.question, top_k=args.top_k, filters=filters)
     payload = generate_grounded_answer(

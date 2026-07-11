@@ -81,11 +81,21 @@ def ask_dealdesk(request: AskRequest):
     if request.vendor:
         filters["vendor"] = request.vendor
         
+    # Dynamically expand context window for comprehensive tasks
+    actual_top_k = request.top_k
+    if request.mode in ("compare", "recommend") and actual_top_k < 15:
+        actual_top_k = 15
+        
     try:
         if request.retriever == "hybrid":
-            results = search_hybrid(index, VECTOR_INDEX_PATH, request.question, top_k=request.top_k, filters=filters)
+            results = search_hybrid(
+                index, VECTOR_INDEX_PATH, request.question,
+                top_k=actual_top_k,
+                filters=filters,
+                mode=request.mode
+            )
         else:
-            results = search(index, request.question, top_k=request.top_k, filters=filters)
+            results = search(index, request.question, top_k=actual_top_k, filters=filters)
             
         payload = generate_grounded_answer(
             request.question,
