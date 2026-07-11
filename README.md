@@ -2,26 +2,32 @@
 
 DealDesk AI is an end-to-end Retrieval-Augmented Generation (RAG) platform tailored for SaaS sales engineers, leveraging localized BM25 indexes and Google's Gemini-3 embeddings for accurate feature comparison, objection handling, and competitor analysis.
 
-## Resume Highlights
-- **Architected** a full-stack DealDesk RAG platform using React, FastAPI, and Vite, enabling SaaS sales engineers to generate competitor comparisons and objection-handling emails backed by direct document citations.
-- **Engineered** highly-scalable data ingestion pipelines that parsed, chunked, and built dual-index models (BM25 Lexical + Gemini Semantic Vector) over 680+ public SaaS configuration guides seamlessly mapped to Vercel Serverless hooks.
-- **Implemented** a responsive dark-mode Glassmorphism dashboard securely surfacing document confidence thresholds, while maintaining backend Sqlite3 pipelines capturing critical chat analytics and continuous user feedback.
+## 🚀 Key Highlights
+- **Dual-Index RAG Engine:** Built with intelligent fallbacks routing between Semantic Vectors (Gemini) and Lexical TF-IDF (BM25) to guarantee zero-hallucination competitor comparisons.
+- **Dynamic Context Scaling:** Automatically expands the retrieval window up to 15 chunks based on comparative or open-ended intent detected within the query.
+- **Glassmorphism UI:** Features a custom Vite/React frontend supporting Dark Mode aesthetics, full markdown document rendering, and user feedback pipelines.
 
-## Architecture
+## 🛠️ Tech Stack
+- **Frontend:** React 18, Vite, React-Markdown, Vanilla CSS (Glassmorphism)
+- **Backend:** FastAPI, Uvicorn, SQLite3 (Analytics Engine)
+- **AI / Embeddings:** Google Gemini `gemini-3.1-flash-lite`, `gemini-embedding-001`
+- **Data Pipeline:** Python (BeautifulSoup, NLTK) parsing 680+ public SaaS configuration guides
+
+## 🗺️ Architecture
 
 ```mermaid
 graph TD;
-    A[Frontend: React/Vite Glassmorphism UI] -->|Axios POST /api/ask| B(Backend: FastAPI Serverless);
+    A[Frontend: React/Vite Glassmorphism UI] -->|Axios POST /api/ask| B(Backend: FastAPI);
     B -->|Ingest Request| F[data/inbox Parsing Engine];
-    B -->|Search Query| C{Search Engine};
+    B -->|Search Query| C{Retriever Engine};
     C -->|BM25 Strategy| D[Local Lexical Index];
     C -->|Vector Strategy| E[Gemini Semantic Embeddings];
     D --> G;
-    E --> G[Context Compiler];
-    G --> H[Gemini-3.1 Flash LLM];
+    E --> G[Context Contextualizer];
+    G --> H[Gemini Flash LLM];
     H -->|Grounded Result + Citations| B;
-    B -->|Records Prompt & Result| K[(Local SQLite Analytics)];
-    F -->|Rebuilds Chunks| C;
+    B -->|Records Analytics & Feedback| K[(SQLite3 Database)];
+    F -->|Rebuilds Index| C;
 ```
 
 This workspace contains a public-docs dataset plan for a RAG-powered SaaS sales/support copilot.
